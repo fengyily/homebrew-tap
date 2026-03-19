@@ -5,21 +5,21 @@
 class ShieldCli < Formula
   desc "Shield CLI - Secure Tunnel Connector"
   homepage "https://github.com/fengyily/shield-cli"
-  version "0.1.3"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.1.3/shield-darwin-amd64.tar.gz"
-      sha256 "c7265fed006aab46536b67774d09059231c33312a77197b69d4e1e86450dadea"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.2.0/shield-darwin-amd64.tar.gz"
+      sha256 "5b49bb31acf1c209ac9c0d8579c296c957dbb74bca2ea35da666d5af99a05abc"
 
       define_method(:install) do
         bin.install "shield"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.1.3/shield-darwin-arm64.tar.gz"
-      sha256 "9ae794e78048c2e0f49755e1fbe947a6144bfbade4aba49617e819e83fe51730"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.2.0/shield-darwin-arm64.tar.gz"
+      sha256 "97051dc04e823da910b474e800e31ad392dd30722dc42050d4d8f1032e60737b"
 
       define_method(:install) do
         bin.install "shield"
@@ -29,15 +29,15 @@ class ShieldCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.1.3/shield-linux-amd64.tar.gz"
-      sha256 "a0fd25a69ffbeac886ac953f412f68e559c2fecfed8d0392831e6392a00f8cbb"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.2.0/shield-linux-amd64.tar.gz"
+      sha256 "2121c85c1780969db74742f8de5a35b32f78854cac356516a234ada2dc85f62c"
       define_method(:install) do
         bin.install "shield"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.1.3/shield-linux-arm64.tar.gz"
-      sha256 "cbc55527b3f8e3dc7ca4b5a39a5cff0d03d6aa7f2658883a3584331f02ffe2b5"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.2.0/shield-linux-arm64.tar.gz"
+      sha256 "1571bd9abfcf713681574ed1d63f130ae1e1a460492d03a2d3222cdeb8c9370c"
       define_method(:install) do
         bin.install "shield"
       end
@@ -46,16 +46,14 @@ class ShieldCli < Formula
 
   def caveats
     <<~EOS
-      Usage:
-        shield <protocol> [ip:port]
+      Web UI (recommended):
+        shield start                # Open http://localhost:8181
 
-      Examples:
+      Command line (for servers):
         shield ssh                  # 127.0.0.1:22
-        shield ssh 2222             # 127.0.0.1:2222
         shield ssh 10.0.0.2        # 10.0.0.2:22
-        shield ssh 10.0.0.2:2222   # 10.0.0.2:2222
-        shield http 3000            # 127.0.0.1:3000
         shield rdp 192.168.1.100   # 192.168.1.100:3389
+        shield http 3000            # 127.0.0.1:3000
 
       Supported protocols: ssh, http, https, rdp, vnc, telnet
 

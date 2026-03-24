@@ -11,7 +11,7 @@ class ShieldCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/fengyily/shield-cli/releases/download/v0.2.5/shield-darwin-amd64.tar.gz"
-      sha256 "08b020aceb3df53805463f56709fc603d8ecd80e8acd2627d4998c1582f00e03"
+      sha256 "7665fe46b0b6f4f98c4581032499e522960d55f3712d29efd6968a910c819ce7"
 
       define_method(:install) do
         bin.install "shield"
@@ -19,7 +19,7 @@ class ShieldCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/fengyily/shield-cli/releases/download/v0.2.5/shield-darwin-arm64.tar.gz"
-      sha256 "bf0735561f78bd379e63cf2973c5943ceba958a4c47d232b87316aa1add9d3f5"
+      sha256 "777fb5ad34558e899a087b6bf66d2ef1819818dfba048159b0567d068eb0b21a"
 
       define_method(:install) do
         bin.install "shield"
@@ -30,14 +30,14 @@ class ShieldCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/fengyily/shield-cli/releases/download/v0.2.5/shield-linux-amd64.tar.gz"
-      sha256 "2bcc45edcdc217f4d61e33c3c510cf71e63f31313ba7118d4e96e6442a121091"
+      sha256 "796532f42c911ed52745f572f0a3a113f7b425f3b53d7775b0a00f3847a37459"
       define_method(:install) do
         bin.install "shield"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/fengyily/shield-cli/releases/download/v0.2.5/shield-linux-arm64.tar.gz"
-      sha256 "533e7bff0ffc5f4a9fe7551a397a3a150c80ae5795deff5abe61f1049162e9df"
+      sha256 "1740c0f39531346c97515dc4a31831376d5b2c04a725a5197907d31363238306"
       define_method(:install) do
         bin.install "shield"
       end

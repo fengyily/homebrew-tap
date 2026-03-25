@@ -5,21 +5,21 @@
 class ShieldCli < Formula
   desc "Shield CLI - Secure Tunnel Connector"
   homepage "https://github.com/fengyily/shield-cli"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.2/shield-darwin-amd64.tar.gz"
-      sha256 "f2748f609c63f829a3c1284c1d4693b77f7d1bc6a2e7988b366b6db8ab07c721"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.3/shield-darwin-amd64.tar.gz"
+      sha256 "e9d7bdd933d2cd14b6277e33af32869d2a312bea1b9147932b8601d99f8007be"
 
       define_method(:install) do
         bin.install "shield"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.2/shield-darwin-arm64.tar.gz"
-      sha256 "72e922640ef40ef4143b10a6f092b037dabba395bf6d135f7011118286a1c5d5"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.3/shield-darwin-arm64.tar.gz"
+      sha256 "4809cf40869c0a020a07c0397c83ab29623e88348b4cd163373f59bccc48230b"
 
       define_method(:install) do
         bin.install "shield"
@@ -29,15 +29,15 @@ class ShieldCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.2/shield-linux-amd64.tar.gz"
-      sha256 "7c1ea06b7481cee8d8ef825c791c30c5af580fec9e899f12e11e52305b1e1ab1"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.3/shield-linux-amd64.tar.gz"
+      sha256 "59a7cbe30e618cc19be1e2a76fedca1579b1d41e87666abd6bc81775983e3354"
       define_method(:install) do
         bin.install "shield"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.2/shield-linux-arm64.tar.gz"
-      sha256 "e21198741333fb726954521a01f7ee67a292e55e4a69f76b34cf8358ada115de"
+      url "https://github.com/fengyily/shield-cli/releases/download/v0.3.3/shield-linux-arm64.tar.gz"
+      sha256 "8018a973f54c4a7676803113f09bb63711756a24c2b59c01e82f08bf845d2951"
       define_method(:install) do
         bin.install "shield"
       end
